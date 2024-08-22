@@ -1,0 +1,38 @@
+npm config set init-author-name "Teklu"
+adding the namd it means configuring it
+
+/////////////////
+ npm get init-author-name
+to get the name of the author 
+
+////
+ npm config delete init-author-name
+deleting the configaration the author name just change the name if u want to license
+
+//////
+ npm i --save-dev gulp
+this is instaling them for devlopment 
+
+//////
+ npm un gulp --save-dev
+ uninstall 
+ deleting the dependancy
+
+ ////
+ npm remove lodash --save
+ rm or r
+ removing the dependancy
+
+
+
+ /////
+ npm i lodash@4.17.3 --save
+ @latest
+ downloding spcefic version
+
+ /////
+ updating package
+ npm update lodash 
+ .//////
+ removing package globaly 
+  npm rm -g nodemon

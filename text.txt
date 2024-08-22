@@ -1,0 +1,105 @@
+// fs.writeFile: Asynchronously creates and writes to a file, replacing it if it exists.
+const fs = require("fs");
+
+fs.writeFile("example.txt", "Hello World! this is frome teklu", (err) => {
+  if (err) throw err;
+  console.log("File has been written");
+});
+
+//fs.writeFileSync: Synchronously creates and writes to a file, replacing it if it exists.
+// const fs = require("fs");
+try {
+  fs.writeFileSync("exampleSync.txt", "Hello World!");
+  console.log("File has been written");
+} catch (err) {
+  console.error(err);
+}
+
+// // fs.appendFile: Asynchronously appends data to a file, creating it if it doesn't exist.
+// const fs = require("fs");
+
+fs.appendFile("example.txt", "\nAppended Text", (err) => {
+  if (err) throw err;
+  console.log("Data has been appended");
+});
+
+// // fs.appendFileSync: Synchronously appends data to a file, creating it if it doesn't exist.
+// const fs = require("fs");
+
+try {
+  fs.appendFileSync("exampleSync.txt", "\nAppended Text");
+  console.log("Data has been appended");
+} catch (err) {
+  console.error(err);
+}
+
+// Delete file synchronously
+// fs.unlinkSync(path) deletes the file at 'example.txt'
+// fs.unlinkSync("example.txt");
+
+// Create a directory asynchronously
+// fs.mkdir(path, callback) creates a directory named 'exampleDir'
+// fs.mkdir("exampleDirt", (err) => {
+//   // If an error occurs, throw the error
+//   if (err) throw err;
+// });
+
+// fs.unlink("main.text");
+
+// Read the contents of a directory asynchronously
+// fs.readdir(path, callback) reads the contents of the current directory ('.')
+// fs.readdir(".", (err, files) => {
+//   // If an error occurs, throw the error
+//   if (err) throw err;
+
+//   // Output the contents of the directory to the console
+//   console.log(files);
+// });
+
+// Remove a directory asynchronously
+// fs.rmdir(path, callback) removes the directory named 'exampleDir'
+// fs.rmdir("exampleDirt", (err) => {
+//   // If an error occurs, throw the error
+//   if (err) throw err;
+
+//   // Output a confirmation message to the console
+//   console.log("Directory removed!");
+// });
+
+// Rename a file or directory asynchronously
+// fs.rename(oldPath, newPath, callback) renames 'oldName.txt' to 'newName.txt'
+// fs.rename("append.text", "newappend.txt", (err) => {
+//   // If an error occurs, throw the error
+//   if (err) throw err;
+
+//   // Output a confirmation message to the console
+//   console.log("File renamed!");
+// });
+
+// Get file statistics synchronously
+// fs.statSync(path) gets stats for the file at 'example.txt'
+const stats = fs.statSync("abebe.js");
+// console.log(stats)
+
+// // Output the file stats to the console
+// console.log(stats);
+
+// Watch for changes to a file
+// fs.watch(filename, listener) watches for changes to 'example.txt'
+fs.watch("example.txt", (eventType, filename) => {
+  // If a change is detected, output a message to the console
+  if (filename) {
+    console.log(`${filename} file Changed`);
+  }
+});
+
+
+// Copy a file asynchronously
+// fs.copyFile(src, dest, callback) copies 'source.txt' to 'destination.txt'
+fs.copyFile("creatingFile.js", "text.txt", (err) => {
+  // If an error occurs, throw the error
+  if (err) throw err;
+
+  // Output a confirmation message to the console
+  console.log("File copied!");
+});
